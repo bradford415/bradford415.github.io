@@ -25,5 +25,5 @@
     ```
 1. Generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change to Markdown (*.md) and HTML files, while changes to the core template and configuration (i.e., _config.yml) will require stopping and restarting Jekyll
    ```bash
-   bundle exec jekyll serve -l -H localhost
+   bundle exec jekyll serve -l -H localhost # `exec` uses only the local version in the gem.lock file instead of global system versions 
    ```
