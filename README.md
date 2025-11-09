@@ -11,9 +11,12 @@
   
     ```bash
     # mac
-    brew install ruby
+    brew install rbenv ruby-build
+    rbenv install 3.2.2
+    export PATH="$HOME/.rbenv/bin:$PATH"
     brew install node
     gem install bundler
+    
     ```
 1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
     ```bash
