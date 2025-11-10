@@ -1,7 +1,8 @@
 # bradford415.github.io
 
+## Running the site locally
+Running the site locally is essential to modify your website and see the changes before pushing your edits to the internet
 
-### Running the site locally
 1. Clone the repository
 1. Install the necessary libraries
     ```bash
@@ -27,3 +28,6 @@
    ```bash
    bundle exec jekyll serve -l -H localhost # `exec` uses only the local version in the gem.lock file instead of global system versions 
    ```
+
+## Editing the site
+`jekyll serve` will automatically rebuild and update changes to `*.md` and `*.html` files; any other changes will require restarting the server. Therefore, all you should have to do to edit the site is modify the `.md` and `.html` files.
