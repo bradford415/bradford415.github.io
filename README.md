@@ -31,4 +31,7 @@ Running the site locally is essential to modify your website and see the changes
    ```
 
 ## Editing the site
-`jekyll serve` will automatically rebuild and update changes to `*.md` and `*.html` files; any other changes will require restarting the server. Therefore, all you should have to do to edit the site is modify the `.md` and `.html` files.
+* `jekyll serve` will automatically rebuild and update changes to `*.md` and `*.html` files; any other changes will require restarting the server. Therefore, all you should have to do to edit the site is modify the `.md` and `.html` files.
+* Files in `_site/` are regenerated every time you run your site, so do not modify these
+
+
