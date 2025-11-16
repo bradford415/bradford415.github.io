@@ -1,11 +1,14 @@
 ---
 permalink: /
-title: "Who am I"
+title: "" # leaving this blank prevents the title from being in tab at the top
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+Who am I
+======
 My name is Bradley Selee. I currently work at Lockheed Martin Space as an AI/ML research engineer, applying deep learning-based computer vision techniques to challenging domains. My research and engineering interests lie in solving complex computer vision and perception problems through state-of-the-art deep-learning techniques.
 
 I'm incredibly passionate about this domain and constantly invest in furthering my knowledge outside of work through side projects and reading. I love moving fast and really honing in a on problem until a solution is found. I believe these are some of the most exciting times for innovation and we should take advantage of it.
