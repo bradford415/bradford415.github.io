@@ -12,10 +12,11 @@ I'm incredibly passionate about this domain and constantly invest in furthering 
 
 I graduated from Clemson University in 2023 with an M.S. in Intelligent Systems. My thesis used deep-learning approaches to segment and fuse images into path planners to improve autonomous driving in off-road vehicles.
 
+<!-- 
 TODO Other interests
 ======
 lofi, hiking, coffee shops
-
+-->
 
 <!--
 A data-driven personal website
