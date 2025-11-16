@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Bradley Selee / Personal Site"
+title                    : "Bradley Selee" #"Bradley Selee / Personal Site"
 title_separator          : "-"
 name                     : &name "Brad" # copyright at the bottom of the page ©
 description              : &description "Bradley Selee's personal site"   # Update this with a general description of your site, this is the default if not overridden by a page
@@ -24,23 +24,23 @@ repository               : "bradford415/bradford415.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Bradley Selee" # Update this with your name
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Passionate about solving challenging computer vision problems" # "Short biography for the left-hand sidebar"
   location         : "Denver, CO"
   employer         : 
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "bselee415@gmail.com"
 
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : # URL #"https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
+  orcid            : # URL
   semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : # URL
   researchgate     : # URL
   scopus           : # URL
 
@@ -48,13 +48,13 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "bradford415" # Creates a github.com/username link
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -63,7 +63,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : bradley-selee # automatically makes a link to linkedin.com/in/username
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
