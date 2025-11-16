@@ -1,4 +1,4 @@
-# bradford415.github.io
+# Site Link: [bradford415.github.io](https://bradford415.github.io)
 
 ## Running the site locally
 Running the site locally is essential to modify your website and see the changes before pushing your edits to the internet
@@ -31,4 +31,14 @@ Running the site locally is essential to modify your website and see the changes
    ```
 
 ## Editing the site
-`jekyll serve` will automatically rebuild and update changes to `*.md` and `*.html` files; any other changes will require restarting the server. Therefore, all you should have to do to edit the site is modify the `.md` and `.html` files.
+
+### Main pages
+* Home page/about me: `_pages/about.md`
+
+### Notes
+* `jekyll serve` will automatically rebuild and update changes to `*.md` and `*.html` files; any other changes will require restarting the server. Therefore, all you should have to do to edit the site is modify the `.md` and `.html` files.
+
+* Files in `_site/` are regenerated every time you run your site, so do not modify these
+* If certain files don't refresh or upload, like your profile picture, after restarting the site, try doing a hard refresh in the browser (Mac: `Cmd + Shift + R`, Window: `Ctrl + Shift + R`) so that the browser ignores the cache
+
+
