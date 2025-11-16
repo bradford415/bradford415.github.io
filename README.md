@@ -1,4 +1,4 @@
-# Site Link: [bradford415.github.io](bradford415.github.io)
+# Site Link: [bradford415.github.io](https://bradford415.github.io)
 
 ## Running the site locally
 Running the site locally is essential to modify your website and see the changes before pushing your edits to the internet
