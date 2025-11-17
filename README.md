@@ -39,7 +39,7 @@ Running the site locally is essential to modify your website and see the changes
 
 ### Notes
 * `jekyll serve` will automatically rebuild and update changes to `*.md` and `*.html` files; any other changes will require restarting the server. Therefore, all you should have to do to edit the site is modify the `.md` and `.html` files.
-
+* When creating new pages in the navbar that requires looping through other files (like portfolio), you need to add it to the collections `_config.yml`, update the `navigation.yml`, and create its respective folder with `.md` files `_newpagedir/`     
 * Files in `_site/` are regenerated every time you run your site, so do not modify these
 * If certain files don't refresh or upload, like your profile picture, after restarting the site, try doing a hard refresh in the browser (Mac: `Cmd + Shift + R`, Window: `Ctrl + Shift + R`) so that the browser ignores the cache
 
