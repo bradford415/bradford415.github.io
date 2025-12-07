@@ -4,6 +4,8 @@ excerpt: "A Python implementation of the active contours traditional computer vi
 collection: projects
 ---
 
+[Project code](https://github.com/bradford415/active-contours-gui)
+
 This project is a Python GUI which implements the traditional active contours algorithm to detect object boundaries. The user can upload any standard image, draw an inital contour around an object, and run the active contours algorithm which slowly encloses the object boundaries. All algorithms (including convolution and seperable convolutions for efficient processing) are written from scratch. 
 
 Project features:
