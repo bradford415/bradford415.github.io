@@ -36,7 +36,10 @@ Running the site locally is essential to modify your website and see the changes
 * Home page/about me: `_pages/about.md`
 * Navigation bar: `_data/navigation.yml`
 * Portfolio items: `_portfolio/`
-* Publications templates: `_includes/archive-single.html`
+* Every file that uses posts (publications, projects, etc.) renders this file: `_includes/archive-single.html`
+  * The easiest way to override this for different pages is to copy the file `_includes/archive-single.html` and rename it for a specific page
+  * For example, I overwrote the Publications section to make it more simple by copying this file `_includes/archive-single.html` and renaming it to `_includes/archive-single-publications.html`. Then, in the publications index page `_pages/publications.html` I modified to include the `_includes/archive-single-publications.html` page I created.
+* If a date is not specified, Jekyll sorts the pages by file name in alphabetical order; for the projects page I modified its index page `_pages/projects.html` to sort these in reverse file name, so when I add new projects, I can just increment the file name
 
 ### Notes
 * `jekyll serve` will automatically rebuild and update changes to `*.md` and `*.html` files; any other changes will require restarting the server. Therefore, all you should have to do to edit the site is modify the `.md` and `.html` files.
