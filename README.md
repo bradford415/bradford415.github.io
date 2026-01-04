@@ -40,6 +40,11 @@ Running the site locally is essential to modify your website and see the changes
   * The easiest way to override this for different pages is to copy the file `_includes/archive-single.html` and rename it for a specific page
   * For example, I overwrote the Publications section to make it more simple by copying this file `_includes/archive-single.html` and renaming it to `_includes/archive-single-publications.html`. Then, in the publications index page `_pages/publications.html` I modified to include the `_includes/archive-single-publications.html` page I created.
 * If a date is not specified, Jekyll sorts the pages by file name in alphabetical order; for the projects page I modified its index page `_pages/projects.html` to sort these in reverse file name, so when I add new projects, I can just increment the file name
+* Brower Icon: to change the browser icon you can update the image her: `_includes/head/custom.html`; specifically, change the `.ico` image `<link rel="icon" href="/images/tropical-leaves-32x32.ico"/>`
+  * I downloaded a png icon here: https://www.freepik.com/search?format=search&iconType=standard&last_filter=query&last_value=&type=icon#uuid=a855fe67-bc5e-4694-8ea6-4b3fa43dfa9f
+  * Resized it to 32x32 with ms paint
+  * Convert the `png` to `ico` here: https://cloudconvert.com/png-to-ico
+  * And uploaded the image to the following directory: `/images`
 
 ### Notes
 * `jekyll serve` will automatically rebuild and update changes to `*.md` and `*.html` files; any other changes will require restarting the server. Therefore, all you should have to do to edit the site is modify the `.md` and `.html` files.
