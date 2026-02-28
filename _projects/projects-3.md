@@ -1,13 +1,28 @@
 ---
-title: "Discord Bot AI Test Bed"
-excerpt: "Discord bot for testing machine learning models<br/><img src='/images/discord-ai-bot-ronaldo.gif'>"
+title: "Real-Time Semantic Segmentation"
+excerpt: "Real-time semantic segmentation inference on a laptop<br/><img src='/images/swift-net-sem-seg-demo.gif'>"
 collection: projects
 ---
 
-<!-- [Project code](github link) -->
+[Project code](https://github.com/CUFCTL/segmentation)
 
-In my free time, I love keeping up with state of the art computer vision deep-learning models, understanding their architecture, and implementing/training the model myself. Generally, once you have a trained model you need to deploy it to some system to solve the task the model was designed for. Instead of developing a separate system for the different task (objection detection, image generation, etc.), I wanted to build a test bed where I could see the models in action. To do this, I chose to build a simple discord bot which ingests models for various tasks and runs inference when provoked by various events. An example of this is performing object detection when a user in the server sends a gif.
+This project was a part of my graduate school research to train an efficient semantic segmentation model for off-road environments and deploy the model on an autonomous Husky Robot.
 
-<span style="font-size: 24px;"><strong>Object Detection</strong></span><br/>
+<span style="font-size: 24px;"><strong>Fast semenatic segmentation inference (top video)</strong></span><br/>
+The model used in the first video (top) is the SwiftNet<sup>1</sup> semantic segmentation model which runs very efficiently on low-compute devices, like a laptop GPU. The fast inference speed is mostly a result of an efficient model architecture. SwiftNet uses a ResNet-18 backbone and a mutli-branch architecture to fuse intermediate feature maps during the upsampling stage of semantic segmentation. Thee ResNet-18 backbone allows quick processing of high-resolution images and the multi-branch design maintains it's strong intersection over union (IoU) metric. Achieves and average of __22 fps__ on a laptop GPU.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k6Gm6j8K6yw?si=9CiUAs4jSOOX-Enr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<span style="font-size: 24px;"><strong>Improving temporal consistency (bottom video)</strong></span><br/>
+The second part of this project looks at improving temporal consistency temporal consistency. Notice in the first video, the semgentation map on the right flickers between classes (colors), this means that the class predictions between frames are temporally inconsistent. To address this, the AuxAdapt <sup>2</sup> method was implemented. The idea behind AuxAdapt is to use a tiny auxiliary network at a lower spatial resolution together with the main segmentation network. During test-time, the main network is frozen and only the auxiliary network is updated. The outputs from both networks are summed before computing the logits. The result is shown from the video at the bottom, where the segmentation map is much smoother between frames (right) than only the segmentation map from the main network (left).
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DvSOB60E_EY?si=pf9HIK53YU1yActa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jGcOne07_WE?si=FwfWpVvPWPrtCLxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## References
+<sup>1</sup> Wang, Haochen, et al. "Swiftnet: Real-time video object segmentation." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2021.
+
+<sup>2</sup> Zhang, Yizhe, et al. "Auxadapt: Stable and efficient test-time adaptation for temporally consistent video semantic segmentation." Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision. 2022.
