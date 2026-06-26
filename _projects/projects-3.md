@@ -1,28 +1,27 @@
 ---
-title: "Real-Time Semantic Segmentation"
-excerpt: "Real-time semantic segmentation inference on a laptop<br/><img src='/images/swift-net-sem-seg-demo.gif'>"
+title: "Open-Vocabulary Object Detection on Sythentic Aperture Radar Images"
+excerpt: "Evaulating fine-tuning an open-vocabulary object detection model on synthetic aperture radar images<br/><img src='/images/open_vocab_example_1.png'>"
 collection: projects
 ---
 
-[Project code](https://github.com/CUFCTL/segmentation)
+This project evaluated the viability of fine-tuning GroundingDINO, an open-vocabulary object detection model, on synthetic aperture radar images (SAR), a very complex domain in remote sensing. SAR measures the radar energy return and, depending on the material/surface, generates a silhoutte-like grayscale image of the ground. The brighter the pixel in the SAR image, the higher energy return it has. Therefore, it can be very challenging to discern the objects or scene in the image.
 
-This project was a part of my graduate school research to train an efficient semantic segmentation model for off-road environments and deploy the model on an autonomous Husky Robot.
+Due to the complex domain, open-source object detection datasets are hard to come across as it usually requires another modality to label the dataset. Additionally, open-vocabulary models like GroundDINO are typically trained with groudning labels, text captions describing a region in the image. Open-source grounding labels of SAR images is almost non-existent. Luckily, GroundingDINO supports training with regular object detection labels or grounding labels. When using solely object detection labels, the text labels are synthesized from the bounding box classes. For example, if there are two boxes of a `car` and a `person`, the text input sequence is `car . person .`
 
-<span style="font-size: 24px;"><strong>Fast semenatic segmentation inference (top video)</strong></span><br/>
-The model used in the first video (top) is the SwiftNet<sup>1</sup> semantic segmentation model which runs very efficiently on low-compute devices, like a laptop GPU. The fast inference speed is mostly a result of an efficient model architecture. SwiftNet uses a ResNet-18 backbone and a mutli-branch architecture to fuse intermediate feature maps during the upsampling stage of semantic segmentation. Thee ResNet-18 backbone allows quick processing of high-resolution images and the multi-branch design maintains it's strong intersection over union (IoU) metric. Achieves and average of __22 fps__ on a laptop GPU.
+For this project, the open-source SAR object detection dataset `SARDet-100k` was utilized to fine-tune a pretrained GroundingDINO model with pure object detection labels. Ultimately, the model was able to perform regular closed-set object on the objects it was trained on very well. However, unsuprisingly, it struggled to discover completely novel objects outside it's fine-tuning data. At the moment, the closest the model gets to detecting novel objects is to provide a text query which is a synonym of the objects in the fine-tuning class set.
 
+Example 1: The top image has a `bridge` and two `ship`s in the image. After fine-tuning, the model is able to localize and classify the bridge and both ships as `boat`s. The classs `boat` was not used to fine-tune the model.
 
-<span style="font-size: 24px;"><strong>Improving temporal consistency (bottom video)</strong></span><br/>
-The second part of this project looks at improving temporal consistency temporal consistency. Notice in the first video, the semgentation map on the right flickers between classes (colors), this means that the class predictions between frames are temporally inconsistent. To address this, the AuxAdapt <sup>2</sup> method was implemented. The idea behind AuxAdapt is to use a tiny auxiliary network at a lower spatial resolution together with the main segmentation network. During test-time, the main network is frozen and only the auxiliary network is updated. The outputs from both networks are summed before computing the logits. The result is shown from the video at the bottom, where the segmentation map is much smoother between frames (right) than only the segmentation map from the main network (left).
+Example 2: The bottom image has two `aircraft`s in the image annd the model is able to localize and classify these aircrafts as planes when the input text is `plane .` is used. The class `plane` was not used to fine-tune the model.
 
+**NOTE**: Inference shown is from the test set.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DvSOB60E_EY?si=pf9HIK53YU1yActa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img src='/images/open_vocab_example_2.png'>
 
 <br/>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jGcOne07_WE?si=FwfWpVvPWPrtCLxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img src='/images/open_vocab_example_1.png'>
+
 
 ## References
-<sup>1</sup> Wang, Haochen, et al. "Swiftnet: Real-time video object segmentation." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2021.
-
-<sup>2</sup> Zhang, Yizhe, et al. "Auxadapt: Stable and efficient test-time adaptation for temporally consistent video semantic segmentation." Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision. 2022.
+<sup>1</sup> Liu, Shilong, et al. "Grounding dino: Marrying dino with grounded pre-training for open-set object detection." European conference on computer vision. Cham: Springer Nature Switzerland, 2024.

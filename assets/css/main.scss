@@ -41,3 +41,53 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+.note-box {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  border-left: 4px solid #60a5fa;
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  margin: 1.5rem 0;
+  line-height: 1.65;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+}
+
+.note-box h2,
+.note-box h3,
+.note-box h4 {
+  font-family: inherit;
+  color: #f9fafb;
+  margin-top: 0;
+}
+
+.note-box p {
+  margin: 0.75rem 0;
+}
+
+.note-box strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.note-box code {
+  background: #1f2937;
+  color: #93c5fd;
+  padding: 0.15rem 0.35rem;
+  border: 1px solid #374151;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+.note-box a {
+  color: #93c5fd;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(147, 197, 253, 0.45);
+}
+
+.note-box a:hover {
+  color: #bfdbfe;
+  border-bottom-color: #bfdbfe;
+}
