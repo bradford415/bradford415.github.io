@@ -1,6 +1,6 @@
 ---
 title: "ROS 2 Object Detection Pipeline"
-excerpt: "ROS 2 object detection pipeline in Gazebo Sim and a differential drive robot<br/><img src='/images/ros2_obj_det.gif'>"
+excerpt: "ROS 2 object detection pipeline in Gazebo Sim and a differential drive robot<br/><img src='/images/ros2_obj_det_crop.gif'>"
 collection: projects
 ---
 
